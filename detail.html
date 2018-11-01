@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<link href="css/mui.min.css" rel="stylesheet" /> 
+	<style type="text/css">
+		.mui-table-view-cell.mui-active{
+	          background-color: red;
+        } 
+        .mui-content{
+        	width: 150px;
+        }
+	</style>
+</head>
+
+<body>
+	<div class="mui-content">		
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell" v-for="(item, index) in list"  :key="index">
+				{{ item.city }}
+			</li>
+		</ul>
+	</div>
+	<script src="js/mui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+	<script type="text/javascript">
+		 mui.init({
+       subpages: [
+      {
+        url: 'dt.html',
+        id: 'dt',
+        styles: {
+          top: '0px',
+          left: '150px'
+        }
+      }
+    ]
+  })    
+ var vm = new Vue({
+  el: '#app',
+  data: {
+    list: []
+  },
+  
+  methods: {
+    getList: function() {
+      var that = this;
+      
+      mui.get('http://route.showapi.com/126-2', {
+        showapi_appid: 26444,
+        showapi_sign: 'e6ed68d43d734b78892a649fedd90cbe'
+      }, function (result) {
+        if (result.showapi_res_code === 0) {
+          that.list = result.showapi_res_body.pagebean.contentlist;
+        } else {
+          mui.toast(result.showapi_res_error);
+        }
+      })
+    }
+  },
+  created: function () {
+    this.getList();
+  }
+})
+	</script>
+</body>
+</html>

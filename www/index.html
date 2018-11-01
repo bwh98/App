@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title></title>
+	<script src="js/mui.min.js"></script>
+	<link href="css/mui.min.css" rel="stylesheet" />
+	<link href="css/index.css" rel="stylesheet" /> 
+</head>
+
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">全部</h1> </header>
+	<div class="mui-content">
+		<!--横向滚动-->
+		<div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+			<div class="mui-scroll">
+				<a class="mui-control-item mui-active"> 推荐 </a>
+				<a class="mui-control-item"> 热点 </a>
+				<a class="mui-control-item"> 北京 </a>
+				<a class="mui-control-item"> 社会 </a>
+				<a class="mui-control-item"> 娱乐 </a>
+				<a class="mui-control-item"> 科技 </a>
+				<a class="mui-control-item"> 社会 </a>
+				<a class="mui-control-item"> 金融 </a>
+				<a class="mui-control-item"> 百货</a>
+			</div>
+		</div>
+		<!--轮播图-->
+		<div id="slider" class="mui-slider">
+			<div class="mui-slider-group mui-slider-loop">
+				<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#"> <img src="https://img.alicdn.com/simba/img/TB1z._JjmzqK1RjSZFHSuv3CpXa.jpg"> </a>
+				</div>
+				<!-- 第一张 -->
+				<div class="mui-slider-item">
+					<a href="#"> <img src="https://img.alicdn.com/simba/img/TB1z._JjmzqK1RjSZFHSuv3CpXa.jpg"> </a>
+				</div>
+				<!-- 第二张 -->
+				<div class="mui-slider-item">
+					<a href="#"> <img src="https://img.alicdn.com/tfs/TB1bnXuk7voK1RjSZFDXXXY3pXa-520-280.jpg_q90_.webp"> </a>
+				</div>
+				<!-- 第三张 -->
+				<div class="mui-slider-item">
+					<a href="#"> <img src="https://img.alicdn.com/tps/i4/TB1FbeRlbPpK1RjSZFFwu15PpXa.png_q90_.webp"> </a>
+				</div>
+				<!-- 第四张 -->
+				<div class="mui-slider-item">
+					<a href="#"> <img src="https://img.alicdn.com/simba/img/TB1rqE6i3HqK1RjSZFPSuwwapXa.jpg"> </a>
+				</div>
+				<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="#"> <img src="https://img.alicdn.com/simba/img/TB1z._JjmzqK1RjSZFHSuv3CpXa.jpg"> </a>
+				</div>
+			</div>
+			<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+			</div>
+		</div>
+		<!-- 九宫格-->
+		<ul class="mui-table-view mui-grid-view mui-grid-9">
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				<a href="#"> <span class="mui-icon mui-icon-weixin"></span>
+					<div class="mui-media-body">微信</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				<a href="#"> <span class="mui-icon mui-icon-qq"><span class="mui-badge mui-badge-red">5</span></span>
+					<div class="mui-media-body">QQ</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				<a href="#"> <span class="mui-icon mui-icon-videocam"></span>
+					<div class="mui-media-body">摄影</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				<a href="#"> <span class="mui-icon mui-icon-spinner mui-spin"></span>
+					<div class="mui-media-body">腾讯</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				<a href="#"> <span class="mui-icon mui-icon-search"></span>
+					<div class="mui-media-body">搜索</div>
+				</a>
+			</li>
+			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				<a href="#"> <span class="mui-icon mui-icon-weibo"></span>
+					<div class="mui-media-body">微博</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+</body>
+<script src="js/footer.js"></script>
+<script type="text/javascript" charset="utf-8">
+     mui.init({
+       subpages: [
+      {
+        url: 'footer.html',
+        id: 'footer',
+        styles: {
+          height : '100px',
+          bottom: '0px'
+        }
+      }
+    ]
+  })
+	var gallery = mui('.mui-slider');
+	gallery.slider({
+		interval: 3000
+	});
+</script>
+</html>

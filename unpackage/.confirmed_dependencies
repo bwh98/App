@@ -1,0 +1,23 @@
+{
+	"index.html": {
+		"resources": [
+			"footer.html"
+		],
+		"refer": [
+			"footer.html"
+		]
+	},
+	"footer.html": {
+		"refer": [
+			"detail.html"
+		]
+	},
+	"detail.html": {
+		"resources": [
+			"dt.html"
+		],
+		"refer": [
+			"dt.html"
+		]
+	}
+}
